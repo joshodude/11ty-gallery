@@ -1,0 +1,38 @@
+---
+layout: "layouts/galleryIndex.njk"
+---
+
+{% set monthsList = [
+"January",
+"Febuary",
+"March",
+"April",
+"May",
+"June",
+"July",
+"August",
+"September",
+"October",
+"November",
+"December"
+]
+%}
+
+{% for year, items in gallery | groupby("year") %}
+<details open>
+    <summary>
+        {{ year }}
+    </summary>
+    {% for month, item in items | groupby("month") %}
+    <details open>
+        <summary>{% for i in monthsList %}{% if month == loop.index %}{{ i }}{% endif %}{%
+            endfor %}
+        </summary>
+        {% for img, image in item | groupby("img") %}
+        <a href="{{ year }}/{{ month }}/{{ img }}" target="_blank"><img
+                src="{{ year }}/{{ month }}/{{ img }}" alt="{{ img }}"></a>
+        {% endfor %}
+    </details>
+    {% endfor %}
+</details>
+{% endfor %}
