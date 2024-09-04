@@ -13,7 +13,7 @@ module.exports = function () {
 
 	// Gets the images in each of the years folders
 	for (let i = 0; i < years.length; i++) {
-		var subDir = ([years[i] + "/**/*.{jpg,jpeg,png,gif,webp}"]);
+		var subDir = ([years[i] + "/**/*.{jpg,JPG,jpeg,JPEG,png,PNG,gif,GIF,webp,WEBP}"]);
 		var subDirResults = fg.sync(String("content/" + [subDir]));
 		yearsItems += subDirResults;
 	};
