@@ -29,8 +29,8 @@ layout: "layouts/galleryIndex.njk"
             endfor %}
         </summary>
         {% for img, image in item | groupby("img") %}
-        <a href="{{ year }}/{{ month }}/{{ img }}" target="_blank"><img
-                src="{{ year }}/{{ month }}/{{ img }}" alt="{{ img }}"></a>
+        <a href="../gallery/{{ year }}/{{ month }}/{{ img }}" target="_blank"><img
+                src="../gallery/{{ year }}/{{ month }}/{{ img }}" alt="{{ img }}"></a>
         {% endfor %}
     </details>
     {% endfor %}
